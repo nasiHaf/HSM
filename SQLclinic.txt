@@ -1,0 +1,16 @@
+CREATE DATABASE clinic_db;
+#create a clinic_user as localhost, give access to the database clinic_db 
+mysql -u clinic_user -p
+USE clinic_db;
+CREATE TABLE Clinic(clinic_id int PRIMARY KEY, clinic_name VARCHAR(250) NOT NULL,clinic_adress VARCHAR(250));
+CREATE TABLE Department(department_id int PRIMARY KEY,department_name VARCHAR(250) NOT NULL, clinic_id int PRIMARY KEY);
+CREATE TABLE Patient(patient_id int PRIMARY KEY,patient_name VARCHAR(50),doctor_id int,clinic_id int);
+CREATE TABLE Doctor(doctor_id int PRIMARY KEY,doctor_name VARCHAR(250),department_id int);
+CREATE TABLE Appointment(appointment_time int KEY,doctor_id int,patient_id int, observations, diagnosis);
+
+#looking at the tables add
+
+SHOW TABLES;
+DESCRIBE table_name;
+#change tables
+UPDATE table_name SET column_name = new_value WHERE condition;
